@@ -5,58 +5,48 @@
 //  Created by Aleksandr Strizhnev on 06.06.2024.
 //
 
-import AppKit
 import SwiftUI
-
-extension NSTableView {
-    open override func viewDidMoveToWindow() {
-        super.viewDidMoveToWindow()
-        
-        backgroundColor = NSColor.clear
-        enclosingScrollView?.drawsBackground = false
-    }
-}
 
 struct PreferencesView: View {
     var body: some View {
         TabView {
             GeneralTab()
                 .tabItem {
-                    Label("General", systemImage: "gear")
+                    Label(L10n.text("General"), systemImage: "gear")
                 }
                 .tag(0)
             
             BrowsersTab()
                 .tabItem {
-                    Label("Browsers", systemImage: "gear")
+                    Label(L10n.text("Browsers"), systemImage: "gear")
                 }
                 .tag(1)
             
             AppsTab()
                 .tabItem {
-                    Label("Apps", systemImage: "gear")
+                    Label(L10n.text("Apps"), systemImage: "gear")
                 }
                 .tag(2)
             
             RulesTab()
                 .tabItem {
-                    Label("Rules", systemImage: "gear")
+                    Label(L10n.text("Rules"), systemImage: "gear")
                 }
                 .tag(3)
             
             BrowserSearchLocationsTab()
                 .tabItem {
-                    Label("Locations", systemImage: "gear")
+                    Label(L10n.text("Locations"), systemImage: "gear")
                 }
                 .tag(4)
 
             AboutTab()
                 .tabItem {
-                    Label("About", systemImage: "gear")
+                    Label(L10n.text("About"), systemImage: "gear")
                 }
                 .tag(5)
         }
-        .frame(minWidth: 700, minHeight: 500)
+        .frame(minWidth: 860, minHeight: 500)
     }
 }
 
