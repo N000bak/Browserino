@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, BrowserSwi
                 guard let self else { return }
                 if let item = self.statusBarItem { NSStatusBar.system.removeStatusItem(item); self.statusBarItem = nil }
                 self.setupStatusBar()
-                self.preferencesWindow?.title = L10n.text("Preferences")
+                self.preferencesWindow?.title = L10n.text("settings.window.title")
             }
         }
         setupStatusBar()
@@ -58,12 +58,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, BrowserSwi
                 let statusButton = statusBarItem!.button
                 statusButton!.image = NSImage.menuIcon
                 
-                let preferences = NSMenuItem(title: L10n.text("Preferences..."), action: #selector(openPreferences), keyEquivalent: "")
-                let quit = NSMenuItem(title: L10n.text("Quit"), action: #selector(quitApp), keyEquivalent: "")
+                let preferences = NSMenuItem(title: L10n.text("menu.preferences"), action: #selector(openPreferences), keyEquivalent: "")
+                let quit = NSMenuItem(title: L10n.text("menu.quit"), action: #selector(quitApp), keyEquivalent: "")
                 
                 statusMenu = NSMenu()
                 
-                let move = NSMenuItem(title: L10n.text("Move current tab…"), action: #selector(moveCurrentTab), keyEquivalent: "")
+                let move = NSMenuItem(title: L10n.text("tabs.transfer.title"), action: #selector(moveCurrentTab), keyEquivalent: "")
                 statusMenu!.addItem(move)
                 statusMenu!.addItem(.separator())
                 statusMenu!.addItem(preferences)
@@ -138,7 +138,7 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate, BrowserSwi
         }
         
         preferencesWindow!.center()
-        preferencesWindow!.title = L10n.text("Preferences")
+        preferencesWindow!.title = L10n.text("settings.window.title")
         preferencesWindow!.contentView = NSHostingView(rootView: LocalizedRoot { PreferencesView() })
         
         preferencesWindow!.isReleasedWhenClosed = false

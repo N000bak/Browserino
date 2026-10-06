@@ -11,7 +11,7 @@ Browserino can now open links in a specific Chromium profile, transfer the curre
 - Add Chromium profile discovery, profile names/avatars, individual visibility and shortcuts, and profile destinations for rules and site mappings.
 - Preserve existing browser order and settings, including legacy Chrome profile rules, names, visibility and shortcuts. Add an option to disable profile display without deleting profile preferences.
 - Add a menu command and configurable global shortcut for tab transfer. Source closing is opt-in; Chromium closing revalidates the captured window/tab IDs and URL. Safari keeps its original tab open.
-- Add ten interface languages, including Russian, with persistent manual selection and a system-default option. Refresh settings and menu labels immediately; align controls and wrap longer translations.
+- Add ten interface languages, including Russian, with persistent manual selection and a system-default option. Refresh settings and menu labels immediately; align controls and wrap longer translations. Use stable semantic localization keys rather than full source text.
 - Adopt Swift 6 and a consistent macOS 14 minimum. Build with the macOS 27 SDK; use Liquid Glass on macOS 26+, blur on earlier supported systems, and an opaque Reduce Transparency fallback.
 - Validate incoming URLs and nested imported settings, prevent self-routing, preserve the chooser on recoverable launch errors, and validate profile grants and paths against traversal/symlink escapes.
 - Deduplicate canonical browser paths and update Homebrew installation instructions without `--no-quarantine`.

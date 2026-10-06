@@ -15,7 +15,7 @@ class BrowserUtil {
 
     static func rescanBrowsers(oldBrowsers: [BrowserTarget]) -> [BrowserTarget]? {
         if let raw = UserDefaults.standard.string(forKey: "browsers"), [BrowserTarget](rawValue: raw) == nil {
-            presentError(NSError(domain: "Browserino", code: 2, userInfo: [NSLocalizedDescriptionKey: L10n.text("Invalid settings format")]))
+            presentError(NSError(domain: "Browserino", code: 2, userInfo: [NSLocalizedDescriptionKey: L10n.text("errors.invalid_settings_format")]))
             return nil
         }
         return loadBrowsers(oldBrowsers: oldBrowsers)
@@ -150,7 +150,7 @@ class BrowserUtil {
               target.app.pathExtension.lowercased() == "app",
               let bundle = Bundle(url: target.app), let identifier = bundle.bundleIdentifier,
               identifier != Bundle.main.bundleIdentifier else {
-            fail("The selected application is unavailable.")
+            fail("errors.application_unavailable")
             return
         }
         var arguments: [String] = []
@@ -158,14 +158,14 @@ class BrowserUtil {
             guard ProfilePathPolicy.isSafeComponent(profile),
                   let profiles = ChromiumProfileService.profiles(forAppAt: target.app),
                   profiles.contains(where: { $0.directory == profile }) else {
-                fail("The selected profile is unavailable. Enable profile access or rescan browsers.")
+                fail("errors.profile_unavailable")
                 return
             }
             arguments.append("--profile-directory=\(profile)")
         }
         if isIncognito {
             guard let privateArg = privateArgs[identifier], !privateArg.isEmpty else {
-                fail("Configure a private-mode argument for this browser first.")
+                fail("errors.private_argument_missing")
                 return
             }
             arguments.append(privateArg)
@@ -194,9 +194,9 @@ class BrowserUtil {
 
     static func presentError(_ error: Error) {
         let alert = NSAlert()
-        alert.messageText = L10n.text("Could not open the link")
+        alert.messageText = L10n.text("errors.open_link.title")
         alert.informativeText = error.localizedDescription
-        alert.addButton(withTitle: L10n.text("OK"))
+        alert.addButton(withTitle: L10n.text("common.ok"))
         runAlert(alert)
     }
 }

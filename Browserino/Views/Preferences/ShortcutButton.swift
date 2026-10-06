@@ -17,7 +17,7 @@ struct ShortcutButton: View {
     
     var body: some View {
         if isRecording {
-            Text(verbatim: L10n.text("Press any key"))
+            Text(verbatim: L10n.text("shortcuts.recorder.press_key"))
                 .padding(5)
                 .contentShape(.rect)
                 .focusable()
@@ -43,7 +43,7 @@ struct ShortcutButton: View {
                 isRecording = true
                 focus = true
             }, label: {
-                Text(recordedKey ?? L10n.text("Record"))
+                Text(recordedKey ?? L10n.text("shortcuts.recorder.assign"))
                     .padding(5)
             })
             .opacity(recordedKey == nil ? 0.5 : 1)

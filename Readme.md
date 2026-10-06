@@ -21,7 +21,7 @@ If you want to support the app, you can buy it on [Gumroad](https://alexstrnik.g
 
 ## Languages
 
-The interface supports English, Russian, German, French, Spanish, Brazilian Portuguese, Italian, Japanese, Korean and Simplified Chinese. Browserino follows the macOS preferred language order and falls back to English. Choose a language manually in General > Language, or select System default; changes take effect immediately and persist across launches. Translations are maintained in `Browserino/Localizable.xcstrings`.
+The interface supports English, Russian, German, French, Spanish, Brazilian Portuguese, Italian, Japanese, Korean and Simplified Chinese. Browserino follows the macOS preferred language order and falls back to English. Choose a language manually in General > Language, or select System default; changes take effect immediately and persist across launches. Translations are maintained in `Browserino/Localizable.xcstrings` with semantic keys such as `settings.language.title`; displayed text belongs in the language values.
 
 Validate translation coverage with `python3 scripts/check-localizations.py`.
 

@@ -36,7 +36,11 @@ final class Localization: ObservableObject {
         Bundle.main.path(forResource: activeLanguage, ofType: "lproj").flatMap(Bundle.init(path:)) ?? .main
     }
     func text(_ key: String) -> String {
-        bundle.localizedString(forKey: key, value: key, table: nil)
+        let localized = bundle.localizedString(forKey: key, value: nil, table: nil)
+        guard localized == key,
+              let englishPath = Bundle.main.path(forResource: "en", ofType: "lproj"),
+              let english = Bundle(path: englishPath) else { return localized }
+        return english.localizedString(forKey: key, value: key, table: nil)
     }
     func format(_ key: String, _ value: String) -> String {
         String(format: text(key), locale: Locale(identifier: activeLanguage), value)

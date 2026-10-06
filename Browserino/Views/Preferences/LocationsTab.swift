@@ -16,14 +16,14 @@ struct BrowserSearchLocations: View {
 
     var body: some View {
         HStack {
-            Text(verbatim: L10n.text("Add a new location by selecting a directory (use ⇧⌘G in the Finder to enter the path)."))
+            Text(verbatim: L10n.text("locations.add.instructions"))
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             Button(action: {
                 explorerPresented.toggle()
             }) {
-                Text(verbatim: L10n.text("Select directory"))
+                Text(verbatim: L10n.text("locations.select_directory"))
             }
             .fileImporter(
                 isPresented: $explorerPresented,
@@ -84,7 +84,7 @@ struct BrowserSearchLocationsTab: View {
             }
             .scrollContentBackground(.hidden)
 
-            Text(verbatim: L10n.text("Manage browser search locations (don't forget to rescan)"))
+            Text(verbatim: L10n.text("locations.list.instructions"))
                 .font(.subheadline)
                 .foregroundStyle(.primary.opacity(0.5))
                 .frame(maxWidth: .infinity)

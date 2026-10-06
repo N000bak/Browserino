@@ -89,15 +89,15 @@ struct RuleForm: View {
     var body: some View {
         Form {
             Section(
-                header: Text(verbatim: L10n.text("General"))
+                header: Text(verbatim: L10n.text("settings.tabs.general"))
                     .font(.headline)
             ) {
-                TextField(L10n.text("Regex:"), text: $regex)
+                TextField(L10n.text("rules.editor.regex"), text: $regex)
                     .font(
                         .system(size: 14)
                     )
                 
-                LabeledContent(L10n.text("Test URLs:")) {
+                LabeledContent(L10n.text("rules.editor.test_urls")) {
                     TextEditor(text: $testUrls)
                         .font(
                             .system(size: 14)
@@ -114,7 +114,7 @@ struct RuleForm: View {
                 .frame(height: 32)
             
             
-            LabeledContent(L10n.text("Open in:")) {
+            LabeledContent(L10n.text("browsers.target.open_in")) {
                 BrowserTargetPicker(app: $url, profile: $profile)
             }
             
@@ -123,12 +123,12 @@ struct RuleForm: View {
             
             HStack {
                 Button(role: .cancel, action: onCancel) {
-                    Text(verbatim: L10n.text("Cancel"))
+                    Text(verbatim: L10n.text("common.cancel"))
                 }
                 
                 if rule != nil {
                     Button(role: .destructive, action: onDelete) {
-                        Text(verbatim: L10n.text("Delete"))
+                        Text(verbatim: L10n.text("common.delete"))
                     }
                 }
                 
@@ -147,7 +147,7 @@ struct RuleForm: View {
                         )
                     )
                 }) {
-                    Text(verbatim: L10n.text("Save"))
+                    Text(verbatim: L10n.text("common.save"))
                 }
                 .disabled(compiledRegex == nil || url == nil)
             }

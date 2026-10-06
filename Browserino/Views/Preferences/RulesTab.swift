@@ -18,7 +18,7 @@ struct AddRule: View {
                 )
                 .opacity(0)
             
-            Text(verbatim: L10n.text("Add a new rule by typing regex and selecting an app."))
+            Text(verbatim: L10n.text("rules.editor.instructions"))
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -28,7 +28,7 @@ struct AddRule: View {
             Button(action: {
                 addPresented.toggle()
             }) {
-                Text(verbatim: L10n.text("Add new rule"))
+                Text(verbatim: L10n.text("rules.add"))
             }
             .sheet(isPresented: $addPresented) {
                 NewRuleForm(
@@ -62,7 +62,7 @@ struct RuleItem: View {
             
             
             Text(bundle == nil
-                 ? L10n.format("%@ (not installed)", rule.app.appDisplayName)
+                 ? L10n.format("browsers.status.not_installed", rule.app.appDisplayName)
                  : rule.target.displayName)
                 .font(
                     .system(size: 14)
@@ -111,7 +111,7 @@ struct RulesTab: View {
             }
             .scrollContentBackground(.hidden)
             
-            Text(verbatim: L10n.text("Type regex and choose app in which links will be opened without prompt"))
+            Text(verbatim: L10n.text("rules.list.instructions"))
                 .font(.subheadline)
                 .foregroundStyle(.primary.opacity(0.5))
                 .frame(maxWidth: .infinity)

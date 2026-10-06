@@ -26,15 +26,15 @@ struct EditAppForm: View {
     var body: some View {
         Form {
             Section(
-                header: Text(verbatim: L10n.text("General"))
+                header: Text(verbatim: L10n.text("settings.tabs.general"))
                     .font(.headline)
             ) {
-                TextField(L10n.text("Host:"), text: $app.host)
+                TextField(L10n.text("apps.editor.host"), text: $app.host)
                     .font(
                         .system(size: 14)
                     )
                 
-                LabeledContent(L10n.text("Open in:")) {
+                LabeledContent(L10n.text("browsers.target.open_in")) {
                     BrowserTargetPicker(
                         app: Binding(
                             get: { app.app },
@@ -49,10 +49,10 @@ struct EditAppForm: View {
                 .frame(height: 32)
             
             Section(
-                header: Text(verbatim: L10n.text("Advanced"))
+                header: Text(verbatim: L10n.text("settings.section.advanced"))
                     .font(.headline)
             ) {
-                TextField(L10n.text("Replace scheme:"), text: $app.schemeOverride)
+                TextField(L10n.text("apps.editor.replace_scheme"), text: $app.schemeOverride)
                     .font(
                         .system(size: 14)
                     )
@@ -65,7 +65,7 @@ struct EditAppForm: View {
                 Button(role: .cancel, action: {
                     isPresented.toggle()
                 }) {
-                    Text(verbatim: L10n.text("Cancel"))
+                    Text(verbatim: L10n.text("common.cancel"))
                 }
                 
                 Button(role: .destructive, action: {
@@ -74,7 +74,7 @@ struct EditAppForm: View {
                     }
                     isPresented.toggle()
                 }) {
-                    Text(verbatim: L10n.text("Delete"))
+                    Text(verbatim: L10n.text("common.delete"))
                 }
                 
                 Spacer()
@@ -89,7 +89,7 @@ struct EditAppForm: View {
                     
                     isPresented.toggle()
                 }) {
-                    Text(verbatim: L10n.text("Save"))
+                    Text(verbatim: L10n.text("common.save"))
                 }
                 .disabled(!hostValid)
             }

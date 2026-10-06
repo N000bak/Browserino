@@ -78,7 +78,7 @@ struct GeneralTab: View {
             let settings = try JSONSerialization.jsonObject(with: data) as? [String: Any]
 
             guard let settings = settings else {
-                BrowserUtil.presentError(NSError(domain: "Browserino", code: 2, userInfo: [NSLocalizedDescriptionKey: L10n.text("Invalid settings format")]))
+                BrowserUtil.presentError(NSError(domain: "Browserino", code: 2, userInfo: [NSLocalizedDescriptionKey: L10n.text("errors.invalid_settings_format")]))
                 return
             }
 
@@ -93,7 +93,7 @@ struct GeneralTab: View {
 
             print("Settings imported successfully")
         } catch {
-            BrowserUtil.presentError(NSError(domain: "Browserino", code: 2, userInfo: [NSLocalizedDescriptionKey: L10n.text("Invalid settings format")]))
+            BrowserUtil.presentError(NSError(domain: "Browserino", code: 2, userInfo: [NSLocalizedDescriptionKey: L10n.text("errors.invalid_settings_format")]))
         }
     }
 
@@ -101,28 +101,28 @@ struct GeneralTab: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
                 HStack(alignment: .top, spacing: 32) {
-                    Text(verbatim: L10n.text("Language")).font(.headline).frame(width: 200, alignment: .trailing)
+                    Text(verbatim: L10n.text("settings.language.title")).font(.headline).frame(width: 200, alignment: .trailing)
                         .multilineTextAlignment(.trailing)
-                    Picker(L10n.text("Language"), selection: $localization.selectedLanguage) {
-                        Text(verbatim: L10n.text("System default")).tag("")
+                    Picker(L10n.text("settings.language.title"), selection: $localization.selectedLanguage) {
+                        Text(verbatim: L10n.text("settings.language.system_default")).tag("")
                         ForEach(LanguagePolicy.options, id: \.id) { option in
                             Text(verbatim: option.name).tag(option.id)
                         }
                     }.labelsHidden().fixedSize().frame(width: 230, alignment: .leading).frame(maxWidth: .infinity, alignment: .leading)
                 }
                 HStack(alignment: .top, spacing: 32) {
-                    Text(verbatim: L10n.text("Move current tab…")).font(.headline).frame(width: 200, alignment: .trailing)
+                    Text(verbatim: L10n.text("tabs.transfer.title")).font(.headline).frame(width: 200, alignment: .trailing)
                         .multilineTextAlignment(.trailing)
                     VStack(alignment: .leading, spacing: 8) {
                         LocalizedShortcutRecorder().fixedSize().frame(width: 230, height: 26, alignment: .leading)
-                        Toggle(L10n.text("Close original tab after opening"), isOn: $closeSourceTab)
-                        Text(verbatim: L10n.text("Safari keeps the original tab open for safety.")).fixedSize(horizontal: false, vertical: true)
+                        Toggle(L10n.text("tabs.transfer.close_source"), isOn: $closeSourceTab)
+                        Text(verbatim: L10n.text("tabs.transfer.safari_keep_source")).fixedSize(horizontal: false, vertical: true)
                             .font(.callout).foregroundStyle(.secondary)
                     }
                 }
 
                 HStack(alignment: .top, spacing: 32) {
-                    Text(verbatim: L10n.text("Default browser"))
+                    Text(verbatim: L10n.text("settings.default_browser.title"))
                         .font(.headline)
                         .frame(width: 200, alignment: .trailing)
                         .multilineTextAlignment(.trailing)
@@ -144,11 +144,11 @@ struct GeneralTab: View {
                                 }
                             }
                         }) {
-                            Text(verbatim: L10n.text("Make default"))
+                            Text(verbatim: L10n.text("settings.default_browser.make_default"))
                         }
                         .disabled(isDefault)
 
-                        Text(verbatim: L10n.text("Make Browserino default browser to use it"))
+                        Text(verbatim: L10n.text("settings.default_browser.description"))
                             .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                             .opacity(0.5)
@@ -156,7 +156,7 @@ struct GeneralTab: View {
                 }
 
                 HStack(alignment: .top, spacing: 32) {
-                    Text(verbatim: L10n.text("Installed Browsers"))
+                    Text(verbatim: L10n.text("settings.installed_browsers.title"))
                         .font(.headline)
                         .frame(width: 200, alignment: .trailing)
                         .multilineTextAlignment(.trailing)
@@ -165,10 +165,10 @@ struct GeneralTab: View {
                         Button(action: {
                             if let refreshed = BrowserUtil.rescanBrowsers(oldBrowsers: browsers) { browsers = refreshed }
                         }) {
-                            Text(verbatim: L10n.text("Rescan"))
+                            Text(verbatim: L10n.text("settings.installed_browsers.rescan"))
                         }
 
-                        Text(verbatim: L10n.text("Rescan list of installed browsers"))
+                        Text(verbatim: L10n.text("settings.installed_browsers.description"))
                             .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                             .opacity(0.5)
@@ -176,21 +176,21 @@ struct GeneralTab: View {
                 }
 
                 HStack(alignment: .top, spacing: 32) {
-                    Text(verbatim: L10n.text("Copy URL"))
+                    Text(verbatim: L10n.text("settings.copy_url.title"))
                         .font(.headline)
                         .frame(width: 200, alignment: .trailing)
                         .multilineTextAlignment(.trailing)
 
                     VStack(alignment: .leading, spacing: 8) {
                         Toggle(isOn: $closeAfterCopy) {
-                            Text(verbatim: L10n.text("Close prompt view after copying URL"))
+                            Text(verbatim: L10n.text("settings.copy_url.close_after_copy"))
                                 .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                                 .opacity(0.5)
                         }
 
                         Toggle(isOn: $alternativeShortcut) {
-                            Text(verbatim: L10n.text("Use Command+C instead of Command+Option+C"))
+                            Text(verbatim: L10n.text("settings.copy_url.alternative_shortcut"))
                                 .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                                 .opacity(0.5)
@@ -199,21 +199,21 @@ struct GeneralTab: View {
                 }
 
                 HStack(alignment: .top, spacing: 32) {
-                    Text(verbatim: L10n.text("Appearance"))
+                    Text(verbatim: L10n.text("settings.appearance.title"))
                         .font(.headline)
                         .frame(width: 200, alignment: .trailing)
                         .multilineTextAlignment(.trailing)
 
                     VStack(alignment: .leading, spacing: 8) {
                         Toggle(isOn: $appsAtTop) {
-                            Text(verbatim: L10n.text("Show apps before browsers"))
+                            Text(verbatim: L10n.text("settings.appearance.apps_at_top"))
                                 .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                                 .opacity(0.5)
                         }
 
                         Toggle(isOn: $showInMenuBar) {
-                            Text(verbatim: L10n.text("Show Browserino in menu bar"))
+                            Text(verbatim: L10n.text("settings.appearance.show_menu_bar"))
                                 .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                                 .opacity(0.5)
@@ -222,14 +222,14 @@ struct GeneralTab: View {
                 }
 
                 HStack(alignment: .top, spacing: 32) {
-                    Text(verbatim: L10n.text("Startup"))
+                    Text(verbatim: L10n.text("settings.startup.title"))
                         .font(.headline)
                         .frame(width: 200, alignment: .trailing)
                         .multilineTextAlignment(.trailing)
 
                     VStack(alignment: .leading, spacing: 8) {
                         Toggle(isOn: $launchAtLogin) {
-                            Text(verbatim: L10n.text("Launch Browserino at login"))
+                            Text(verbatim: L10n.text("settings.startup.launch_at_login"))
                                 .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                                 .opacity(0.5)
@@ -249,7 +249,7 @@ struct GeneralTab: View {
                 }
 
                 HStack(alignment: .top, spacing: 32) {
-                    Text(verbatim: L10n.text("Import/Export"))
+                    Text(verbatim: L10n.text("settings.import_export.title"))
                         .font(.headline)
                         .frame(width: 200, alignment: .trailing)
                         .multilineTextAlignment(.trailing)
@@ -258,10 +258,10 @@ struct GeneralTab: View {
                         Button(action: {
                             exportSettings()
                         }) {
-                            Text(verbatim: L10n.text("Export"))
+                            Text(verbatim: L10n.text("settings.import_export.export"))
                         }
 
-                        Text(verbatim: L10n.text("Export all settings"))
+                        Text(verbatim: L10n.text("settings.import_export.export_description"))
                             .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                             .opacity(0.5)
@@ -269,10 +269,10 @@ struct GeneralTab: View {
                         Button(action: {
                             showingImportPicker = true
                         }) {
-                            Text(verbatim: L10n.text("Import"))
+                            Text(verbatim: L10n.text("settings.import_export.import"))
                         }
 
-                        Text(verbatim: L10n.text("Import all settings"))
+                        Text(verbatim: L10n.text("settings.import_export.import_description"))
                             .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                             .opacity(0.5)
@@ -280,7 +280,7 @@ struct GeneralTab: View {
                 }
 
                 HStack(alignment: .top, spacing: 32) {
-                    Text(verbatim: L10n.text("System reset"))
+                    Text(verbatim: L10n.text("settings.reset.title"))
                         .font(.headline)
                         .frame(width: 200, alignment: .trailing)
                         .multilineTextAlignment(.trailing)
@@ -294,10 +294,10 @@ struct GeneralTab: View {
                                 defaults.removeObject(forKey: key)
                             }
                         }) {
-                            Text(verbatim: L10n.text("Reset"))
+                            Text(verbatim: L10n.text("settings.reset.action"))
                         }
 
-                        Text(verbatim: L10n.text("Reset all preferences"))
+                        Text(verbatim: L10n.text("settings.reset.description"))
                             .fixedSize(horizontal: false, vertical: true)
                             .font(.callout)
                             .opacity(0.5)
@@ -352,8 +352,8 @@ struct LocalizedShortcutRecorder: NSViewRepresentable {
     func makeNSView(context: Context) -> KeyboardShortcuts.RecorderCocoa {
         let view = KeyboardShortcuts.RecorderCocoa(for: .moveCurrentTab)
         context.coordinator.attach(view)
-        view.placeholderString = L10n.text("Record")
-        view.setAccessibilityPlaceholderValue(L10n.text("Record"))
+        view.placeholderString = L10n.text("shortcuts.recorder.assign")
+        view.setAccessibilityPlaceholderValue(L10n.text("shortcuts.recorder.assign"))
         return view
     }
     func updateNSView(_ view: KeyboardShortcuts.RecorderCocoa, context: Context) {
@@ -383,7 +383,7 @@ struct LocalizedShortcutRecorder: NSViewRepresentable {
             }
         }
         func refresh() {
-            let label = L10n.text(recording ? "Press any key" : "Record")
+            let label = L10n.text(recording ? "shortcuts.recorder.press_key" : "shortcuts.recorder.assign")
             view?.placeholderString = label
             view?.setAccessibilityPlaceholderValue(label)
         }

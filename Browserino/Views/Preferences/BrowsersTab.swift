@@ -41,7 +41,7 @@ struct BrowsersTab: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Toggle(L10n.text("Show browser profiles"), isOn: $profilesEnabled)
+            Toggle(L10n.text("browsers.profiles.show"), isOn: $profilesEnabled)
                 .padding(.horizontal, 20)
             List {
                 ForEach(displayed, id: \.offset) { offset, browser in
@@ -82,7 +82,7 @@ struct BrowsersTab: View {
                                 // profile, so it stays on the plain row and every
                                 // profile of that browser inherits it.
                                 if !profilesEnabled || browsers.first(where: { $0.app == browser.app }) == browser {
-                                    TextField(L10n.text("Private argument"),
+                                    TextField(L10n.text("browsers.private_argument.placeholder"),
                                         text: privateArg(for: browserId)
                                     )
                                     .font(
@@ -101,12 +101,12 @@ struct BrowsersTab: View {
                             }
 
                             if profilesEnabled && browsers.first(where: { $0.app == browser.app }) == browser && needsProfileAccess(browser) {
-                                Button(L10n.text("Enable profiles")) {
+                                Button(L10n.text("browsers.profiles.enable")) {
                                     if ChromiumProfileService.requestAccess(forAppAt: browser.app) {
                                         if let refreshed = BrowserUtil.rescanBrowsers(oldBrowsers: browsers) { browsers = refreshed }
                                     }
                                 }
-                                .help(L10n.text("Enable profiles"))
+                                .help(L10n.text("browsers.profiles.enable"))
 
                                 Spacer()
                                     .frame(width: 8)
@@ -141,7 +141,7 @@ struct BrowsersTab: View {
                 if let refreshed = BrowserUtil.rescanBrowsers(oldBrowsers: browsers) { browsers = refreshed }
             }
 
-            Text(verbatim: L10n.text("Drag and drop to reorder. Press record to assign a shortcut. Click on eye to hide unwanted browsers from prompt")
+            Text(verbatim: L10n.text("browsers.list.instructions")
             )
             .font(.subheadline)
             .foregroundStyle(.primary.opacity(0.5))

@@ -12,37 +12,37 @@ struct PreferencesView: View {
         TabView {
             GeneralTab()
                 .tabItem {
-                    Label(L10n.text("General"), systemImage: "gear")
+                    Label(L10n.text("settings.tabs.general"), systemImage: "gear")
                 }
                 .tag(0)
             
             BrowsersTab()
                 .tabItem {
-                    Label(L10n.text("Browsers"), systemImage: "gear")
+                    Label(L10n.text("settings.tabs.browsers"), systemImage: "gear")
                 }
                 .tag(1)
             
             AppsTab()
                 .tabItem {
-                    Label(L10n.text("Apps"), systemImage: "gear")
+                    Label(L10n.text("settings.tabs.apps"), systemImage: "gear")
                 }
                 .tag(2)
             
             RulesTab()
                 .tabItem {
-                    Label(L10n.text("Rules"), systemImage: "gear")
+                    Label(L10n.text("settings.tabs.rules"), systemImage: "gear")
                 }
                 .tag(3)
             
             BrowserSearchLocationsTab()
                 .tabItem {
-                    Label(L10n.text("Locations"), systemImage: "gear")
+                    Label(L10n.text("settings.tabs.locations"), systemImage: "gear")
                 }
                 .tag(4)
 
             AboutTab()
                 .tabItem {
-                    Label(L10n.text("About"), systemImage: "gear")
+                    Label(L10n.text("settings.tabs.about"), systemImage: "gear")
                 }
                 .tag(5)
         }

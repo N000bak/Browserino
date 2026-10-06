@@ -37,7 +37,7 @@ struct AboutTab: View {
             Spacer()
                 .frame(height: 16)
             
-            Text(verbatim: L10n.text("Thanks to @byt3m4st3r, @mihado, @ventz and others for contributions!"))
+            Text(verbatim: L10n.text("about.contributors"))
                 .foregroundStyle(.secondary)
             
             Spacer()

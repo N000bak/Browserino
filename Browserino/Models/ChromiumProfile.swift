@@ -56,8 +56,8 @@ enum ChromiumProfileService {
         panel.canChooseFiles = false
         panel.allowsMultipleSelection = false
         panel.directoryURL = root
-        panel.message = L10n.format("Choose this folder to list profiles for %@.", browser)
-        panel.prompt = L10n.text("Grant Access")
+        panel.message = L10n.format("browsers.profiles.access_description", browser)
+        panel.prompt = L10n.text("browsers.profiles.grant_access")
 
         guard panel.runModal() == .OK, let picked = panel.url,
               picked.standardizedFileURL.resolvingSymlinksInPath() == root.standardizedFileURL.resolvingSymlinksInPath() else {

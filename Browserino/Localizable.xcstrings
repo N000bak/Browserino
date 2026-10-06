@@ -1,7 +1,7 @@
 {
   "sourceLanguage": "en",
   "strings": {
-    "General": {
+    "settings.tabs.general": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -66,7 +66,7 @@
         }
       }
     },
-    "Browsers": {
+    "settings.tabs.browsers": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -131,7 +131,7 @@
         }
       }
     },
-    "Apps": {
+    "settings.tabs.apps": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -196,7 +196,7 @@
         }
       }
     },
-    "Rules": {
+    "settings.tabs.rules": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -261,7 +261,7 @@
         }
       }
     },
-    "Locations": {
+    "settings.tabs.locations": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -326,7 +326,7 @@
         }
       }
     },
-    "About": {
+    "settings.tabs.about": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -391,7 +391,7 @@
         }
       }
     },
-    "Preferences": {
+    "settings.window.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -456,7 +456,7 @@
         }
       }
     },
-    "Preferences...": {
+    "menu.preferences": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -521,7 +521,7 @@
         }
       }
     },
-    "Quit": {
+    "menu.quit": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -586,7 +586,7 @@
         }
       }
     },
-    "Default browser": {
+    "settings.default_browser.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -651,7 +651,7 @@
         }
       }
     },
-    "Make default": {
+    "settings.default_browser.make_default": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -716,7 +716,7 @@
         }
       }
     },
-    "Make Browserino default browser to use it": {
+    "settings.default_browser.description": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -781,7 +781,7 @@
         }
       }
     },
-    "Installed Browsers": {
+    "settings.installed_browsers.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -846,7 +846,7 @@
         }
       }
     },
-    "Rescan": {
+    "settings.installed_browsers.rescan": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -911,7 +911,7 @@
         }
       }
     },
-    "Rescan list of installed browsers": {
+    "settings.installed_browsers.description": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -976,7 +976,7 @@
         }
       }
     },
-    "Copy URL": {
+    "settings.copy_url.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1041,7 +1041,7 @@
         }
       }
     },
-    "Close prompt view after copying URL": {
+    "settings.copy_url.close_after_copy": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1106,7 +1106,7 @@
         }
       }
     },
-    "Use Command+C instead of Command+Option+C": {
+    "settings.copy_url.alternative_shortcut": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1171,7 +1171,7 @@
         }
       }
     },
-    "Appearance": {
+    "settings.appearance.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1236,7 +1236,7 @@
         }
       }
     },
-    "Show apps before browsers": {
+    "settings.appearance.apps_at_top": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1301,7 +1301,7 @@
         }
       }
     },
-    "Show Browserino in menu bar": {
+    "settings.appearance.show_menu_bar": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1366,7 +1366,7 @@
         }
       }
     },
-    "Startup": {
+    "settings.startup.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1431,7 +1431,7 @@
         }
       }
     },
-    "Launch Browserino at login": {
+    "settings.startup.launch_at_login": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1496,7 +1496,7 @@
         }
       }
     },
-    "Import/Export": {
+    "settings.import_export.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1561,7 +1561,7 @@
         }
       }
     },
-    "Export": {
+    "settings.import_export.export": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1626,7 +1626,7 @@
         }
       }
     },
-    "Export all settings": {
+    "settings.import_export.export_description": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1691,7 +1691,7 @@
         }
       }
     },
-    "Import": {
+    "settings.import_export.import": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1756,7 +1756,7 @@
         }
       }
     },
-    "Import all settings": {
+    "settings.import_export.import_description": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1821,7 +1821,7 @@
         }
       }
     },
-    "System reset": {
+    "settings.reset.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1886,7 +1886,7 @@
         }
       }
     },
-    "Reset": {
+    "settings.reset.action": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -1951,7 +1951,7 @@
         }
       }
     },
-    "Reset all preferences": {
+    "settings.reset.description": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2016,7 +2016,7 @@
         }
       }
     },
-    "Private argument": {
+    "browsers.private_argument.placeholder": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2081,7 +2081,7 @@
         }
       }
     },
-    "Drag and drop to reorder. Press record to assign a shortcut. Click on eye to hide unwanted browsers from prompt": {
+    "browsers.list.instructions": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2146,7 +2146,7 @@
         }
       }
     },
-    "Press any key": {
+    "shortcuts.recorder.press_key": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2211,7 +2211,7 @@
         }
       }
     },
-    "Record": {
+    "shortcuts.recorder.assign": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2276,7 +2276,7 @@
         }
       }
     },
-    "Open with": {
+    "apps.open_with": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2341,7 +2341,7 @@
         }
       }
     },
-    "Cancel": {
+    "common.cancel": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2406,7 +2406,7 @@
         }
       }
     },
-    "Delete": {
+    "common.delete": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2471,7 +2471,7 @@
         }
       }
     },
-    "Save": {
+    "common.save": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2536,7 +2536,7 @@
         }
       }
     },
-    "Advanced": {
+    "settings.section.advanced": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2601,7 +2601,7 @@
         }
       }
     },
-    "Host:": {
+    "apps.editor.host": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2666,7 +2666,7 @@
         }
       }
     },
-    "Replace scheme:": {
+    "apps.editor.replace_scheme": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2731,7 +2731,7 @@
         }
       }
     },
-    "Application:": {
+    "apps.editor.application": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2796,7 +2796,7 @@
         }
       }
     },
-    "Regex:": {
+    "rules.editor.regex": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2861,7 +2861,7 @@
         }
       }
     },
-    "Test URLs:": {
+    "rules.editor.test_urls": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2926,7 +2926,7 @@
         }
       }
     },
-    "example.com or empty for all": {
+    "apps.host.placeholder": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -2991,7 +2991,7 @@
         }
       }
     },
-    "Type domain and choose app in which links will be opened": {
+    "apps.list.instructions": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3056,7 +3056,7 @@
         }
       }
     },
-    "Add a new rule by typing regex and selecting an app.": {
+    "rules.editor.instructions": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3121,7 +3121,7 @@
         }
       }
     },
-    "Add new rule": {
+    "rules.add": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3186,7 +3186,7 @@
         }
       }
     },
-    "Type regex and choose app in which links will be opened without prompt": {
+    "rules.list.instructions": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3251,7 +3251,7 @@
         }
       }
     },
-    "Add a new location by selecting a directory (use ⇧⌘G in the Finder to enter the path).": {
+    "locations.add.instructions": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3316,7 +3316,7 @@
         }
       }
     },
-    "Select directory": {
+    "locations.select_directory": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3381,7 +3381,7 @@
         }
       }
     },
-    "Manage browser search locations (don't forget to rescan)": {
+    "locations.list.instructions": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3446,7 +3446,7 @@
         }
       }
     },
-    "Thanks to @byt3m4st3r, @mihado, @ventz and others for contributions!": {
+    "about.contributors": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3511,7 +3511,7 @@
         }
       }
     },
-    "Language": {
+    "settings.language.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3576,7 +3576,7 @@
         }
       }
     },
-    "System default": {
+    "settings.language.system_default": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3641,7 +3641,7 @@
         }
       }
     },
-    "Show browser profiles": {
+    "browsers.profiles.show": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3706,7 +3706,7 @@
         }
       }
     },
-    "Enable profiles": {
+    "browsers.profiles.enable": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3771,7 +3771,7 @@
         }
       }
     },
-    "Choose a browser": {
+    "browsers.target.choose": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3836,7 +3836,7 @@
         }
       }
     },
-    "Other Application…": {
+    "browsers.target.other_application": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3901,7 +3901,7 @@
         }
       }
     },
-    "Open in:": {
+    "browsers.target.open_in": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -3966,7 +3966,7 @@
         }
       }
     },
-    "%@ (not installed)": {
+    "browsers.status.not_installed": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4031,7 +4031,7 @@
         }
       }
     },
-    "Move current tab…": {
+    "tabs.transfer.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4096,7 +4096,7 @@
         }
       }
     },
-    "Close original tab after opening": {
+    "tabs.transfer.close_source": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4161,7 +4161,7 @@
         }
       }
     },
-    "Safari keeps the original tab open for safety.": {
+    "tabs.transfer.safari_keep_source": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4226,7 +4226,7 @@
         }
       }
     },
-    "OK": {
+    "common.ok": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4291,7 +4291,7 @@
         }
       }
     },
-    "Could not open the link": {
+    "errors.open_link.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4356,7 +4356,7 @@
         }
       }
     },
-    "Could not move the current tab": {
+    "errors.move_tab.title": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4421,7 +4421,7 @@
         }
       }
     },
-    "Bring a supported browser to the front and try again.": {
+    "errors.move_tab.no_supported_browser": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4486,7 +4486,7 @@
         }
       }
     },
-    "Show another browser in the Browsers list, or unhide one, then try again.": {
+    "errors.move_tab.no_destination": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4551,7 +4551,7 @@
         }
       }
     },
-    "The tab was opened. The original tab has been kept open.": {
+    "tabs.transfer.source_kept": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4616,7 +4616,7 @@
         }
       }
     },
-    "Open System Settings": {
+    "common.open_system_settings": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4681,7 +4681,7 @@
         }
       }
     },
-    "Grant Access": {
+    "browsers.profiles.grant_access": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4746,7 +4746,7 @@
         }
       }
     },
-    "Choose this folder to list profiles for %@.": {
+    "browsers.profiles.access_description": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4811,7 +4811,7 @@
         }
       }
     },
-    "The selected application is unavailable.": {
+    "errors.application_unavailable": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4876,7 +4876,7 @@
         }
       }
     },
-    "The selected profile is unavailable. Enable profile access or rescan browsers.": {
+    "errors.profile_unavailable": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -4941,7 +4941,7 @@
         }
       }
     },
-    "Configure a private-mode argument for this browser first.": {
+    "errors.private_argument_missing": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -5006,7 +5006,7 @@
         }
       }
     },
-    "Allow Browserino to control the browser in System Settings → Privacy & Security → Automation.": {
+    "errors.automation_permission_required": {
       "extractionState": "manual",
       "localizations": {
         "en": {
@@ -5071,7 +5071,7 @@
         }
       }
     },
-    "Invalid settings format": {
+    "errors.invalid_settings_format": {
       "extractionState": "manual",
       "localizations": {
         "en": {

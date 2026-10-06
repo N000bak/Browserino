@@ -230,23 +230,23 @@ final class BrowserSwitchService {
     private func presentError(_ error: Error) {
         NSApplication.shared.activateCompat()
         let alert = NSAlert()
-        alert.messageText = L10n.text("Could not move the current tab")
+        alert.messageText = L10n.text("errors.move_tab.title")
         switch error {
         case BrowserSwitchError.noBrowser, BrowserSwitchError.unsupportedBrowser:
-            alert.informativeText = L10n.text("Bring a supported browser to the front and try again.")
+            alert.informativeText = L10n.text("errors.move_tab.no_supported_browser")
         case BrowserSwitchError.noDestination:
-            alert.informativeText = L10n.text("Show another browser in the Browsers list, or unhide one, then try again.")
+            alert.informativeText = L10n.text("errors.move_tab.no_destination")
         case BrowserSwitchError.closeFailed:
-            alert.informativeText = L10n.text("The tab was opened. The original tab has been kept open.")
+            alert.informativeText = L10n.text("tabs.transfer.source_kept")
         case BrowserTabScriptingError.denied:
-            alert.informativeText = L10n.text("Allow Browserino to control the browser in System Settings → Privacy & Security → Automation.")
+            alert.informativeText = L10n.text("errors.automation_permission_required")
         case BrowserTabScriptingError.changed, BrowserTabScriptingError.unsafeClose:
-            alert.informativeText = L10n.text("The tab was opened. The original tab has been kept open.")
+            alert.informativeText = L10n.text("tabs.transfer.source_kept")
         default: alert.informativeText = error.localizedDescription
         }
-        alert.addButton(withTitle: L10n.text("OK"))
+        alert.addButton(withTitle: L10n.text("common.ok"))
         let denied = (error as? BrowserTabScriptingError) == .denied
-        if denied { alert.addButton(withTitle: L10n.text("Open System Settings")) }
+        if denied { alert.addButton(withTitle: L10n.text("common.open_system_settings")) }
         if BrowserUtil.runAlert(alert) == .alertSecondButtonReturn && denied { Self.openAutomationSettings() }
     }
 

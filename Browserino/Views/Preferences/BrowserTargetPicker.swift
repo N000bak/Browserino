@@ -34,7 +34,7 @@ struct BrowserTargetPicker: View {
                 Divider()
             }
 
-            Button(L10n.text("Other Application…")) {
+            Button(L10n.text("browsers.target.other_application")) {
                 otherPresented = true
             }
         } label: {
@@ -45,12 +45,12 @@ struct BrowserTargetPicker: View {
 
                     Text(
                         Bundle(url: selection.app) == nil
-                            ? L10n.format("%@ (not installed)", selection.app.appDisplayName)
+                            ? L10n.format("browsers.status.not_installed", selection.app.appDisplayName)
                             : selection.displayName
                     )
                 }
             } else {
-                Text(verbatim: L10n.text("Choose a browser"))
+                Text(verbatim: L10n.text("browsers.target.choose"))
             }
         }
         .fileImporter(

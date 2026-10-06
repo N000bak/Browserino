@@ -46,7 +46,7 @@ struct NewApp: View {
                 )
                 .opacity(0)
             
-            TextField(L10n.text("example.com or empty for all"), text: $host)
+            TextField(L10n.text("apps.host.placeholder"), text: $host)
                 .font(
                     .system(size: 14)
                 )
@@ -96,7 +96,7 @@ struct AppItem: View {
 
 
             Text(bundle == nil
-                 ? L10n.format("%@ (not installed)", app.app.appDisplayName)
+                 ? L10n.format("browsers.status.not_installed", app.app.appDisplayName)
                  : app.target.displayName)
                 .font(
                     .system(size: 14)
@@ -154,7 +154,7 @@ struct AppsTab: View {
             }
             .scrollContentBackground(.hidden)
             
-            Text(verbatim: L10n.text("Type domain and choose app in which links will be opened"))
+            Text(verbatim: L10n.text("apps.list.instructions"))
                 .font(.subheadline)
                 .foregroundStyle(.primary.opacity(0.5))
                 .frame(maxWidth: .infinity)
